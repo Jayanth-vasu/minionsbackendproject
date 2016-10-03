@@ -2,6 +2,7 @@ package com.minions.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -56,6 +57,21 @@ public class ForumDAOImpl implements ForumDAO {
 	public void deleteAllForums() {
 		session.getCurrentSession().delete(findAllForums());
 
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean checkForum(String forum_name) {
+		
+		boolean checkforum=false;
+		Query q= session.getCurrentSession().createQuery("from Forum where forum_name='"+forum_name+"'");
+		List<Forum> forum= q.list();
+		int size=forum.size();
+		if(size==1)
+		{
+			checkforum=true;
+		}
+		return checkforum;
 	}
 
 }

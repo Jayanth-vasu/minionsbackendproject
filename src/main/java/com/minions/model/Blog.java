@@ -1,5 +1,6 @@
 package com.minions.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -9,8 +10,12 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Blog {
+public class Blog implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1835321195470800098L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int blog_id;

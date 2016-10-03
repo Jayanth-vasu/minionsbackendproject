@@ -19,5 +19,7 @@ public interface BlogDAO {
     public List<Blog> findAllBlogs(); 
      
     public void deleteAllBlogs();
+
+	public boolean checkBlog(String blog_name);
 	
 }

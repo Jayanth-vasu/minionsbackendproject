@@ -20,5 +20,7 @@ public Blog findById(int blog_id);
     public List<Blog> findAllBlogs(); 
      
     public void deleteAllBlogs();
+
+	public boolean checkBlog(String blog_name);
 	
 }

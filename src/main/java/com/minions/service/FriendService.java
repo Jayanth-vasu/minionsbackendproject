@@ -17,5 +17,7 @@ public interface FriendService {
     public void deleteFriendById(int friend_id);
  
     public List<Friend> findAllFriends(); 
+    
+    
 
 }

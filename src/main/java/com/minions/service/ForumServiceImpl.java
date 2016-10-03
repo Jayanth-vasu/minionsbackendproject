@@ -13,25 +13,24 @@ import com.minions.model.Forum;
 @Transactional
 public class ForumServiceImpl implements ForumService {
 
-	
 	@Autowired
 	ForumDAO forumDAO;
-	
+
 	@Override
 	public Forum findById(int forum_id) {
-		
+
 		return forumDAO.findById(forum_id);
 	}
-	
+
 	@Override
 	public Forum findByName(String forum_name) {
-		
+
 		return forumDAO.findByName(forum_name);
 	}
 
 	@Override
 	public void saveForum(Forum forum) {
-	forumDAO.saveForum(forum);
+		forumDAO.saveForum(forum);
 	}
 
 	@Override
@@ -48,7 +47,7 @@ public class ForumServiceImpl implements ForumService {
 
 	@Override
 	public List<Forum> findAllForums() {
-		
+
 		return forumDAO.findAllForums();
 	}
 
@@ -58,6 +57,16 @@ public class ForumServiceImpl implements ForumService {
 
 	}
 
-	
+	@Override
+	public boolean checkForum(String forum_name) {
+boolean checkforum=false;
+		
+		checkforum=forumDAO.checkForum(forum_name);
+		if(checkforum==true){
+			checkforum=true;
+		}
+		
+		return checkforum;
+	}
 
 }

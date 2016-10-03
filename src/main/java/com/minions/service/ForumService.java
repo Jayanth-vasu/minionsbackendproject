@@ -19,4 +19,6 @@ public interface ForumService {
 	    public List<Forum> findAllForums(); 
 	     
 	    public void deleteAllForums();
+	    
+	    public boolean checkForum(String forum_name);
 }

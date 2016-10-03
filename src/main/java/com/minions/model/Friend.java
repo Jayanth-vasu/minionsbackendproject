@@ -1,12 +1,19 @@
 package com.minions.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Friend {
+public class Friend implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3435374295875883379L;
 
 	@Id
 	private int friend_id;
@@ -17,6 +24,8 @@ public class Friend {
 	
 	private boolean request;
 
+	
+	
 	public int getFriend_id() {
 		return friend_id;
 	}

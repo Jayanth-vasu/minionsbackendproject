@@ -57,5 +57,16 @@ public class BlogServiceImpl implements BlogService {
 		blogDAO.deleteAllBlogs();
 
 	}
+	@Override
+	public boolean checkBlog(String blog_name) {
+		boolean checkblog=false;
+		
+		checkblog=blogDAO.checkBlog(blog_name);
+		if(checkblog==true){
+			checkblog=true;
+		}
+		
+		return checkblog;
+	}
 
 }

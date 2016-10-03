@@ -2,6 +2,7 @@ package com.minions.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -61,10 +62,20 @@ public class UserDAOImpl implements UserDAO{
 		
 	}
 
-	/*@Override
-	public boolean isUserExist(UserDetails user) {
-		
-		return false;
-	}*/
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean checkUser(String mail_id) {
+		boolean checkuser=false;
+		Query q= session.getCurrentSession().createQuery("from UserDetails where mail_id='"+mail_id+"'");
+		List<UserDetails> user= q.list();
+		int size=user.size();
+		if(size==1)
+		{
+			checkuser=true;
+		}
+		return checkuser;
+	}
+
+	
 
 }

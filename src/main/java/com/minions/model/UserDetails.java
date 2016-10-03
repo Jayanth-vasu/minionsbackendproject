@@ -1,33 +1,27 @@
 package com.minions.model;
 
-import java.util.Set;
+import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
-public class UserDetails {
+public class UserDetails implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5986352279747627577L;
+
+	private int user_id;
+
+	private String user_name;
 
 	@Id
-	private int user_id;
-	
-	private String user_name;
-	
-		
-	private String email;
-	
+	private String mail_id;
+
 	private String password;
-	
-	
-	private String role_name;
-	
-	@OneToMany(mappedBy="userDetails",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	private Set<UserDetails> userDetails;
-	
-	
+
 	public int getUser_id() {
 		return user_id;
 	}
@@ -44,20 +38,12 @@ public class UserDetails {
 		this.user_name = user_name;
 	}
 
-	public String getRole_name() {
-		return role_name;
+	public String getMail_id() {
+		return mail_id;
 	}
 
-	public void setRole_name(String role_name) {
-		this.role_name = role_name;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	public void setMail_id(String mail_id) {
+		this.mail_id = mail_id;
 	}
 
 	public String getPassword() {
@@ -68,15 +54,4 @@ public class UserDetails {
 		this.password = password;
 	}
 
-	public Set<UserDetails> getUserDetails() {
-		return userDetails;
-	}
-
-	public void setUserDetails(Set<UserDetails> userDetails) {
-		this.userDetails = userDetails;
-	}
-
-	
-	
-	
 }

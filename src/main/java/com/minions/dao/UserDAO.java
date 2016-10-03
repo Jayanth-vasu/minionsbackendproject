@@ -20,5 +20,7 @@ public interface UserDAO {
 
 	public void deleteAllUsers();
 
-	/*public boolean isUserExist(UserDetails user);*/
+	public boolean checkUser(String mail_id);
+
+	
 }

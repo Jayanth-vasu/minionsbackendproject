@@ -58,10 +58,18 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
-	/*@Override
-	public boolean isUserExist(UserDetails user) {
-		
-		return false;
-	}*/
+	@Override
+	public boolean UserExist(String mail_id) {
+		boolean checkuser = false;
+
+		checkuser = userDAO.checkUser(mail_id);
+		if (checkuser== true) {
+			checkuser = true;
+		}
+
+		return checkuser;
+	}
+
+	
 
 }

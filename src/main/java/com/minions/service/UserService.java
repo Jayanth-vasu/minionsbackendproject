@@ -20,5 +20,5 @@ public interface UserService {
      
     public void deleteAllUsers();
      
-   /* public boolean isUserExist(UserDetails user);*/
+   public boolean UserExist(String mail_id);
 }

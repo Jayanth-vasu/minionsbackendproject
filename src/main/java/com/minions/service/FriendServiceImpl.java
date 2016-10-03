@@ -52,4 +52,6 @@ public class FriendServiceImpl implements FriendService {
 		return friendDAO.findAllFriends();
 	}
 
+	
+
 }

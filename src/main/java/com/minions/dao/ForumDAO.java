@@ -19,5 +19,7 @@ public interface ForumDAO {
     public List<Forum> findAllForums(); 
      
     public void deleteAllForums();
+
+	public boolean checkForum(String forum_name);
 	
 }

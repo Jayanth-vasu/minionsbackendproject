@@ -1,5 +1,6 @@
 package com.minions.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -8,8 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Forum {
+public class Forum implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1139814387700753786L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int forum_id;
